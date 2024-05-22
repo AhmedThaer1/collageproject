@@ -3,6 +3,7 @@ import "~/styles/globals.css";
 import { GeistSans } from "geist/font/sans";
 import { ClerkProvider } from "@clerk/nextjs";
 import TopNav from "./_components/TopNav";
+import { ThemeProvider } from "./_components/theme-provider";
 
 export const metadata = {
   title: "Create T3 App",
@@ -17,14 +18,25 @@ export default function RootLayout({
 }) {
   return (
     <ClerkProvider>
-      <html lang="en" className={`${GeistSans.variable}`}>
-        <body className="bg-black text-white">
-          <div>
-            <TopNav />
-          </div>
+      <html
+        lang="en"
+        suppressHydrationWarning
+        className={`${GeistSans.variable}`}
+      >
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange
+        >
+          <body>
+            <div>
+              <TopNav />
+            </div>
 
-          {children}
-        </body>
+            {children}
+          </body>
+        </ThemeProvider>
       </html>
     </ClerkProvider>
   );
