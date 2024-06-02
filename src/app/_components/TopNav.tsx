@@ -167,9 +167,9 @@ export function ModeButton() {
 
 function Dropdown() {
   return (
-    <div class="group relative flex cursor-pointer rounded-md px-3 py-2 hover:bg-[var(--PrimaryForWhite)] dark:hover:bg-[var(--AccentForDark)] md:items-center md:justify-center">
-      <div class="flex items-center justify-between">
-        <a class="menu-hover pr-2 text-white">About</a>
+    <div className="group relative flex cursor-pointer rounded-md px-3 py-2 hover:bg-[var(--PrimaryForWhite)] dark:hover:bg-[var(--AccentForDark)] md:items-center md:justify-center">
+      <div className="flex items-center justify-between">
+        <a className="menu-hover pr-2 text-white">About</a>
         <span>
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -177,7 +177,7 @@ function Dropdown() {
             viewBox="0 0 24 24"
             stroke-width="1.5"
             stroke="currentColor"
-            class="h-6 w-6"
+            className="h-6 w-6"
           >
             <path
               stroke-linecap="round"
@@ -188,24 +188,24 @@ function Dropdown() {
         </span>
       </div>
 
-      <div class="invisible absolute top-10 z-50 flex w-[250px] flex-col items-center justify-center bg-gray-100 px-4 py-1 text-gray-800 shadow-xl group-hover:visible">
-        <a class="my-2 block border-b border-gray-100 py-1 font-semibold text-gray-500 hover:text-black md:mx-2">
+      <div className="invisible absolute top-10 z-50 flex w-[250px] flex-col items-center justify-center bg-gray-100 px-4 py-1 text-gray-800 shadow-xl group-hover:visible">
+        <a className="my-2 block border-b border-gray-100 py-1 font-semibold text-gray-500 hover:text-black md:mx-2">
           ABOUT THE JOURNAL
         </a>
 
-        <a class="my-2 block border-b border-gray-100 py-1 font-semibold text-gray-500 hover:text-black md:mx-2">
+        <a className="my-2 block border-b border-gray-100 py-1 font-semibold text-gray-500 hover:text-black md:mx-2">
           AUTHOR GUIDES
         </a>
 
-        <a class="my-2 block border-b border-gray-100 py-1 font-semibold text-gray-500 hover:text-black md:mx-2">
+        <a className="my-2 block border-b border-gray-100 py-1 font-semibold text-gray-500 hover:text-black md:mx-2">
           EDITORIAL TEAM
         </a>
 
-        <a class="my-2 block border-b border-gray-100 py-1 font-semibold text-gray-500 hover:text-black md:mx-2">
+        <a className="my-2 block border-b border-gray-100 py-1 font-semibold text-gray-500 hover:text-black md:mx-2">
           PRIVACY STATEMENT
         </a>
 
-        <a class="my-2 block border-b border-gray-100 py-1 font-semibold text-gray-500 hover:text-black md:mx-2">
+        <a className="my-2 block border-b border-gray-100 py-1 font-semibold text-gray-500 hover:text-black md:mx-2">
           PUBLISHER WEBSITE
         </a>
       </div>
