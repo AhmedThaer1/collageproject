@@ -6,8 +6,10 @@ import Link from "next/link";
 import {
   DropdownMenu,
   DropdownMenuContent,
+  DropdownMenuItem,
   DropdownMenuTrigger,
 } from "~/components/ui/dropdown-menu";
+
 import {
   SignInButton,
   SignUpButton,
@@ -16,32 +18,35 @@ import {
   UserButton,
 } from "@clerk/nextjs";
 
+import { Moon, Sun } from "lucide-react";
+import { Button } from "~/components/ui/button";
+
 const NavLinks = [
-  { title: "Home", url: "/" },
-  { title: "archives", url: "/archives" },
-  { title: "announcements", url: "/announcements" },
+  { title: "Current", url: "/" },
+  { title: "Archives", url: "/archives" },
+  { title: "Announcements", url: "/announcements" },
   { title: "Contact", url: "/contact" },
 ];
 
 const TopNav = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const { setTheme } = useTheme();
 
   return (
-    <nav className="bg-blue-800 text-white shadow-md">
+    <nav className="fixed left-0 top-0 z-50 w-full bg-[#1151A2] text-white shadow-md">
       <div className="container mx-auto px-4">
         <div className="flex h-16 items-center justify-between">
-          <div className="flex items-center">
+          <div className="flex items-center gap-4">
+            <h1 className="text-2xl font-bold">LOGO</h1>
             <h1 className="text-2xl font-bold">ALKADHIM JOURNAL FOR CS</h1>
           </div>
-          <div className="hidden space-x-4 md:flex">
+          <div className="hidden space-x-4 md:flex md:items-center md:justify-center">
             <SignedOut>
-              <SignInButton>
+              <SignInButton mode="modal">
                 <span className="cursor-pointer rounded-md px-3 py-2 text-lg font-semibold hover:bg-blue-700">
                   Sign In
                 </span>
               </SignInButton>
-              <SignUpButton>
+              <SignUpButton mode="modal">
                 <span className="cursor-pointer rounded-md px-3 py-2 text-lg font-semibold hover:bg-blue-700">
                   Register
                 </span>
@@ -51,9 +56,7 @@ const TopNav = () => {
               {/* here Goes the form sub */}
               <UserButton />
             </SignedIn>
-            <button className="space-x-4" onClick={() => setTheme("dark")}>
-              Button
-            </button>
+            <ModeButton />
           </div>
           <div className="flex md:hidden">
             <button
@@ -96,21 +99,22 @@ const TopNav = () => {
               {link.title}
             </Link>
           ))}
+          <Dropdown />
         </div>
       )}
 
-      <div className="mx-auto bg-blue-300 px-4 text-white shadow-md">
+      <div className="mx-auto bg-[#1151A2] text-white shadow-md md:px-4 lg:px-4 xl:px-60">
         <div className="hidden space-x-4 md:flex">
           {NavLinks.map((link) => (
             <Link
               href={link.url}
               key={link.url}
-              className="rounded-md px-3 py-2 hover:bg-blue-700"
+              className="rounded-md px-3 py-2 hover:bg-[var(--PrimaryForWhite)] dark:hover:bg-[var(--AccentForDark)]"
             >
               {link.title}
             </Link>
           ))}
-          <DropDownMenu />
+          <Dropdown />
         </div>
       </div>
     </nav>
@@ -119,40 +123,92 @@ const TopNav = () => {
 
 export default TopNav;
 
-function DropDownMenu() {
+export function ModeButton() {
+  const { setTheme } = useTheme();
+
   return (
-    <div>
-      <DropdownMenu>
-        <DropdownMenuTrigger asChild>
-          <div className="flex rounded-md px-3 py-2 hover:bg-blue-700">
-            ABOUT
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              strokeWidth={1.5}
-              stroke="currentColor"
-              className="h-5 w-5"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                d="M8.25 15 12 18.75 15.75 15m-7.5-6L12 5.25 15.75 9"
-              />
-            </svg>
-          </div>
-        </DropdownMenuTrigger>
-        <DropdownMenuContent className="w-56">
-          <ul>
-            <li>EDITORIAL BOARD</li>
-            <li>EDITORIAL POLICY</li>
-            <li>PEER REVIEW PROCESS</li>
-            <li>OPEN ACCESS POLICY</li>
-            <li>INDEXING & ABSTRACTING</li>
-            <li>PLAGIARISM POLICY</li>
-          </ul>
-        </DropdownMenuContent>
-      </DropdownMenu>
+    <DropdownMenu>
+      <DropdownMenuTrigger asChild>
+        <Button variant="outline" size="icon">
+          <Sun className="h-[1.2rem] w-[1.2rem] rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
+          <Moon className="absolute h-[1.2rem] w-[1.2rem] rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
+          <span className="sr-only">Toggle theme</span>
+        </Button>
+      </DropdownMenuTrigger>
+      <DropdownMenuContent align="end" className="bg-black text-white">
+        <DropdownMenuItem
+          onClick={() => setTheme("light")}
+          className="cursor-pointer hover:bg-white hover:text-black"
+        >
+          <span className="h-full w-full hover:bg-white hover:text-black">
+            Light
+          </span>
+        </DropdownMenuItem>
+        <DropdownMenuItem
+          onClick={() => setTheme("dark")}
+          className="cursor-pointer hover:bg-white hover:text-black"
+        >
+          <span className="h-full w-full hover:bg-white hover:text-black">
+            Dark
+          </span>
+        </DropdownMenuItem>
+        <DropdownMenuItem
+          onClick={() => setTheme("system")}
+          className="cursor-pointer hover:bg-white hover:text-black"
+        >
+          <span className="h-full w-full hover:bg-white hover:text-black">
+            System
+          </span>
+        </DropdownMenuItem>
+      </DropdownMenuContent>
+    </DropdownMenu>
+  );
+}
+
+function Dropdown() {
+  return (
+    <div class="group relative flex cursor-pointer rounded-md px-3 py-2 hover:bg-[var(--PrimaryForWhite)] dark:hover:bg-[var(--AccentForDark)] md:items-center md:justify-center">
+      <div class="flex items-center justify-between">
+        <a class="menu-hover pr-2 text-white">About</a>
+        <span>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+            class="h-6 w-6"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M19.5 8.25l-7.5 7.5-7.5-7.5"
+            />
+          </svg>
+        </span>
+      </div>
+
+      <div class="invisible absolute top-10 z-50 flex w-[250px] flex-col items-center justify-center bg-gray-100 px-4 py-1 text-gray-800 shadow-xl group-hover:visible">
+        <a class="my-2 block border-b border-gray-100 py-1 font-semibold text-gray-500 hover:text-black md:mx-2">
+          ABOUT THE JOURNAL
+        </a>
+
+        <a class="my-2 block border-b border-gray-100 py-1 font-semibold text-gray-500 hover:text-black md:mx-2">
+          AUTHOR GUIDES
+        </a>
+
+        <a class="my-2 block border-b border-gray-100 py-1 font-semibold text-gray-500 hover:text-black md:mx-2">
+          EDITORIAL TEAM
+        </a>
+
+        <a class="my-2 block border-b border-gray-100 py-1 font-semibold text-gray-500 hover:text-black md:mx-2">
+          PRIVACY STATEMENT
+        </a>
+
+        <a class="my-2 block border-b border-gray-100 py-1 font-semibold text-gray-500 hover:text-black md:mx-2">
+          PUBLISHER WEBSITE
+        </a>
+      </div>
     </div>
   );
 }

@@ -18,25 +18,24 @@ export default function RootLayout({
 }) {
   return (
     <ClerkProvider>
-      <html
-        lang="en"
-        suppressHydrationWarning
-        className={`${GeistSans.variable}`}
-      >
-        <ThemeProvider
-          attribute="class"
-          defaultTheme="system"
-          enableSystem
-          disableTransitionOnChange
-        >
-          <body>
-            <div>
-              <TopNav />
+      <html lang="en" className={`${GeistSans.variable}`}>
+        <body className="light-mode dark:dark-mode min-h-screen transition-colors duration-300">
+          <ThemeProvider
+            attribute="class"
+            defaultTheme="system"
+            enableSystem
+            disableTransitionOnChange
+          >
+            <div className="flex min-h-screen flex-col">
+              <div className="sticky top-0 w-full">
+                <TopNav />
+              </div>
+              <main className="container mt-16 flex-grow md:mt-[6.6rem]">
+                {children}
+              </main>
             </div>
-
-            {children}
-          </body>
-        </ThemeProvider>
+          </ThemeProvider>
+        </body>
       </html>
     </ClerkProvider>
   );

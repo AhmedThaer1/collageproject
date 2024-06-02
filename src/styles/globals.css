@@ -4,16 +4,51 @@
 
 :root {
   /* white mode */
-  --BackgroundWhite: #fbfbfe;
-  --TextForWhite: #040316;
+
   --PrimaryForWhite: #2f27ce;
   --SecondaryForWhite: #dddbff;
   --AccentForWhite: #443dff;
 
   /* dark mode */
-  --BackgroundDark: #010104;
-  --TextForDark: #eae9fc;
+
   --primaryForDark: #3a31d8;
   --SecondaryForDark: #020024;
   --AccentForDark: #0600c2;
+}
+
+/* styles.css */
+.light {
+  background-image: repeating-linear-gradient(
+      135deg,
+      hsla(35, 0%, 71%, 0.09) 0,
+      hsla(35, 0%, 71%, 0.09) 1px,
+      transparent 1px,
+      transparent 11px
+    ),
+    repeating-linear-gradient(
+      45deg,
+      hsla(35, 0%, 71%, 0.09) 0,
+      hsla(35, 0%, 71%, 0.09) 1px,
+      transparent 1px,
+      transparent 11px
+    ),
+    linear-gradient(90deg, #f8f8f8, #f8f8f8);
+}
+
+.dark {
+  background-image: repeating-linear-gradient(
+      135deg,
+      hsla(35, 0%, 71%, 0.09) 0,
+      hsla(35, 0%, 71%, 0.09) 1px,
+      transparent 1px,
+      transparent 11px
+    ),
+    repeating-linear-gradient(
+      45deg,
+      hsla(35, 0%, 71%, 0.09) 0,
+      hsla(35, 0%, 71%, 0.09) 1px,
+      transparent 1px,
+      transparent 11px
+    ),
+    linear-gradient(90deg, #09131c, #09131c);
 }

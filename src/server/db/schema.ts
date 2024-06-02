@@ -17,16 +17,22 @@ import {
  */
 export const createTable = pgTableCreator((name) => `collagewebapp_${name}`);
 
-export const files = createTable(
-  "file",
-  {
-    id: serial("id").primaryKey(),
-    name: varchar("name", { length: 256 }).notNull(),
-    url: varchar("url", { length: 1024 }).notNull(),
-    userId: varchar("userId", { length: 256 }).notNull(),
-    createdAt: timestamp("created_at", { withTimezone: true })
-      .default(sql`CURRENT_TIMESTAMP`)
-      .notNull(),
-    updatedAt: timestamp("updatedAt", { withTimezone: true }),
-  },
-)
+export const posts = createTable("posts", {
+  id: serial("id").primaryKey(),
+  title: varchar("title", { length: 256 }).notNull(),
+
+  postUrl: varchar("post_url", { length: 1024 }).notNull(),
+  author: varchar("author", { length: 256 }).notNull(),
+
+  doiUrl: varchar("doi_url", { length: 1024 }).notNull(),
+
+  userId: varchar("userId", { length: 256 }).notNull(),
+
+  abstract: varchar("abstract", { length: 2048 }).notNull(),
+  publishedAt: varchar("published_at", { length: 256 }).notNull(),
+
+  createdAt: timestamp("created_at", { withTimezone: true })
+    .default(sql`CURRENT_TIMESTAMP`)
+    .notNull(),
+  updatedAt: timestamp("updatedAt", { withTimezone: true }),
+});
