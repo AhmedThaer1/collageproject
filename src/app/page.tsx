@@ -9,28 +9,449 @@ export default async function HomePage() {
   return (
     <div className="flex min-h-screen w-full bg-white shadow-md dark:text-black">
       <div className="flex w-full flex-col lg:flex-row">
-        <main className="w-full p-4 lg:w-3/4">
-          <h1 className="mb-4 text-3xl font-bold text-gray-700">
-            Al-Kadhim Journal for Computer Science
-          </h1>
-          <div className="flex flex-col items-center justify-center gap-4 pt-4">
-            <div className="h-16 w-12">Image</div>
-            <p className="w-full md:w-fit">
-              The journal aims mainly to contribute to the maturity of
-              scientific research and strongly encourages and supports any
-              researcher to participate in this maturity. To achieve this goal,
-              we welcome all academics and scientists in the sciences to publish
-              their scientific products. The publication of this journal
-              contributes to the development of science and its impact. In
-              addition, it provides a means of discussion for science
-              researchers.
-            </p>
+        <main className="w-full p-4">
+          <div className="flex w-full flex-col items-center justify-around md:flex-row md:gap-4 md:pt-4">
+            <div className="flex flex-col items-center justify-center md:hidden md:w-auto">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="347.5"
+                height="400"
+                viewBox="0 0 652 644"
+                fill="none"
+                className="mondrian"
+                data-astro-cid-j7pv25f6
+              >
+                {" "}
+                <rect
+                  opacity="0.05"
+                  x="1"
+                  width="163"
+                  height="60"
+                  rx="10"
+                  fill="var(--text)"
+                  data-astro-cid-j7pv25f6
+                ></rect>{" "}
+                <rect
+                  x="424"
+                  width="193"
+                  height="60"
+                  rx="10"
+                  fill="var(--secondary)"
+                  data-astro-cid-j7pv25f6
+                ></rect>{" "}
+                <rect
+                  x="424"
+                  y="68"
+                  width="193"
+                  height="175"
+                  rx="10"
+                  fill="var(--secondary)"
+                  data-astro-cid-j7pv25f6
+                ></rect>{" "}
+                <rect
+                  opacity="0.2"
+                  x="424"
+                  y="401"
+                  width="193"
+                  height="79"
+                  rx="10"
+                  fill="var(--primary)"
+                  data-astro-cid-j7pv25f6
+                ></rect>{" "}
+                <rect
+                  x="255"
+                  y="626"
+                  width="362"
+                  height="18"
+                  rx="9"
+                  fill="var(--bg)"
+                  data-astro-cid-j7pv25f6
+                ></rect>{" "}
+                <rect
+                  x="80"
+                  y="579"
+                  width="166"
+                  height="65"
+                  rx="10"
+                  fill="var(--bg)"
+                  data-astro-cid-j7pv25f6
+                ></rect>{" "}
+                <rect
+                  x="255"
+                  y="579"
+                  width="160"
+                  height="40"
+                  rx="10"
+                  fill="var(--text)"
+                  data-astro-cid-j7pv25f6
+                ></rect>{" "}
+                <rect
+                  opacity="0.05"
+                  x="255"
+                  y="490"
+                  width="160"
+                  height="80"
+                  rx="10"
+                  fill="var(--text)"
+                  data-astro-cid-j7pv25f6
+                ></rect>{" "}
+                <rect
+                  opacity="0.05"
+                  x="255"
+                  y="400"
+                  width="160"
+                  height="80"
+                  rx="10"
+                  fill="var(--text)"
+                  data-astro-cid-j7pv25f6
+                ></rect>{" "}
+                <rect
+                  x="80"
+                  y="68"
+                  width="335"
+                  height="324"
+                  rx="10"
+                  fill="var(--primary)"
+                  data-astro-cid-j7pv25f6
+                ></rect>{" "}
+                <rect
+                  x="80"
+                  y="401"
+                  width="166"
+                  height="169"
+                  rx="10"
+                  fill="var(--text)"
+                  data-astro-cid-j7pv25f6
+                ></rect>{" "}
+                <rect
+                  x="424"
+                  y="490"
+                  width="193"
+                  height="129"
+                  rx="10"
+                  fill="var(--accent)"
+                  data-astro-cid-j7pv25f6
+                ></rect>{" "}
+                <rect
+                  opacity="0.05"
+                  x="626"
+                  y="490"
+                  width="26"
+                  height="154"
+                  rx="10"
+                  fill="var(--text)"
+                  data-astro-cid-j7pv25f6
+                ></rect>{" "}
+                <rect
+                  x="424"
+                  y="252"
+                  width="91"
+                  height="140"
+                  rx="10"
+                  fill="var(--bg)"
+                  data-astro-cid-j7pv25f6
+                ></rect>{" "}
+                <rect
+                  x="524"
+                  y="252"
+                  width="93"
+                  height="140"
+                  rx="10"
+                  fill="var(--bg)"
+                  data-astro-cid-j7pv25f6
+                ></rect>{" "}
+                <rect
+                  opacity="0.05"
+                  x="626"
+                  width="26"
+                  height="480"
+                  rx="10"
+                  fill="var(--text)"
+                  data-astro-cid-j7pv25f6
+                ></rect>{" "}
+                <rect
+                  x="173"
+                  width="242"
+                  height="60"
+                  rx="10"
+                  fill="var(--bg)"
+                  data-astro-cid-j7pv25f6
+                ></rect>{" "}
+                <rect
+                  x="1"
+                  y="68"
+                  width="70"
+                  height="157"
+                  rx="10"
+                  fill="var(--bg)"
+                  data-astro-cid-j7pv25f6
+                ></rect>{" "}
+                <rect
+                  opacity="0.05"
+                  x="1"
+                  y="234"
+                  width="70"
+                  height="259"
+                  rx="10"
+                  fill="var(--text)"
+                  data-astro-cid-j7pv25f6
+                ></rect>{" "}
+                <rect
+                  x="1"
+                  y="502"
+                  width="70"
+                  height="142"
+                  rx="10"
+                  fill="var(--secondary)"
+                  data-astro-cid-j7pv25f6
+                ></rect>{" "}
+              </svg>
+            </div>
+            <div className="w-full md:w-auto">
+              <h1 className="w-full max-w-full overflow-hidden text-ellipsis whitespace-nowrap text-wrap text-4xl font-bold md:w-fit md:text-6xl">
+                Welcome To Al-Kadhim <br />
+                <span
+                  style={{
+                    backgroundClip: "text",
+                    WebkitBackgroundClip: "text",
+                    WebkitTextFillColor: "transparent",
+                  }}
+                  className="bg-[linear-gradient(120deg,var(--primary),var(--accent))]"
+                >
+                  Journal
+                </span>{" "}
+                for{" "}
+                <span
+                  style={{
+                    WebkitTextStrokeWidth: "1px",
+                    WebkitTextStrokeColor: "var(--text)",
+                  }}
+                  className="italic text-transparent"
+                >
+                  Computer Science
+                </span>
+              </h1>
+
+              <p className="w-full pt-12 text-gray-700 md:w-[70%] md:text-left">
+                The journal aims mainly to contribute to the maturity of
+                scientific research and strongly encourages and supports any
+                researcher to participate in this maturity.
+              </p>
+
+              <div className="flex w-fit items-center justify-center gap-4 pb-8 pt-12 md:flex-row">
+                <Button className="rounded-xl bg-[var(--primary)] px-8 py-2 text-lg text-white transition-all hover:-translate-y-1">
+                  Go to Articles
+                </Button>
+                <Button className="rounded-xl bg-[var(--secondary)] px-8 py-2 text-lg text-white transition-all hover:-translate-y-1">
+                  Sign Up
+                </Button>
+              </div>
+            </div>
+
+            <div className="hidden h-full w-full flex-col items-end md:flex md:w-auto">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="447.5"
+                height="644"
+                viewBox="0 0 652 644"
+                fill="none"
+                className="mondrian"
+                data-astro-cid-j7pv25f6
+              >
+                {" "}
+                <rect
+                  opacity="0.05"
+                  x="1"
+                  width="163"
+                  height="60"
+                  rx="10"
+                  fill="var(--text)"
+                  data-astro-cid-j7pv25f6
+                ></rect>{" "}
+                <rect
+                  x="424"
+                  width="193"
+                  height="60"
+                  rx="10"
+                  fill="var(--secondary)"
+                  data-astro-cid-j7pv25f6
+                ></rect>{" "}
+                <rect
+                  x="424"
+                  y="68"
+                  width="193"
+                  height="175"
+                  rx="10"
+                  fill="var(--secondary)"
+                  data-astro-cid-j7pv25f6
+                ></rect>{" "}
+                <rect
+                  opacity="0.2"
+                  x="424"
+                  y="401"
+                  width="193"
+                  height="79"
+                  rx="10"
+                  fill="var(--primary)"
+                  data-astro-cid-j7pv25f6
+                ></rect>{" "}
+                <rect
+                  x="255"
+                  y="626"
+                  width="362"
+                  height="18"
+                  rx="9"
+                  fill="var(--bg)"
+                  data-astro-cid-j7pv25f6
+                ></rect>{" "}
+                <rect
+                  x="80"
+                  y="579"
+                  width="166"
+                  height="65"
+                  rx="10"
+                  fill="var(--bg)"
+                  data-astro-cid-j7pv25f6
+                ></rect>{" "}
+                <rect
+                  x="255"
+                  y="579"
+                  width="160"
+                  height="40"
+                  rx="10"
+                  fill="var(--text)"
+                  data-astro-cid-j7pv25f6
+                ></rect>{" "}
+                <rect
+                  opacity="0.05"
+                  x="255"
+                  y="490"
+                  width="160"
+                  height="80"
+                  rx="10"
+                  fill="var(--text)"
+                  data-astro-cid-j7pv25f6
+                ></rect>{" "}
+                <rect
+                  opacity="0.05"
+                  x="255"
+                  y="400"
+                  width="160"
+                  height="80"
+                  rx="10"
+                  fill="var(--text)"
+                  data-astro-cid-j7pv25f6
+                ></rect>{" "}
+                <rect
+                  x="80"
+                  y="68"
+                  width="335"
+                  height="324"
+                  rx="10"
+                  fill="var(--primary)"
+                  data-astro-cid-j7pv25f6
+                ></rect>{" "}
+                <rect
+                  x="80"
+                  y="401"
+                  width="166"
+                  height="169"
+                  rx="10"
+                  fill="var(--text)"
+                  data-astro-cid-j7pv25f6
+                ></rect>{" "}
+                <rect
+                  x="424"
+                  y="490"
+                  width="193"
+                  height="129"
+                  rx="10"
+                  fill="var(--accent)"
+                  data-astro-cid-j7pv25f6
+                ></rect>{" "}
+                <rect
+                  opacity="0.05"
+                  x="626"
+                  y="490"
+                  width="26"
+                  height="154"
+                  rx="10"
+                  fill="var(--text)"
+                  data-astro-cid-j7pv25f6
+                ></rect>{" "}
+                <rect
+                  x="424"
+                  y="252"
+                  width="91"
+                  height="140"
+                  rx="10"
+                  fill="var(--bg)"
+                  data-astro-cid-j7pv25f6
+                ></rect>{" "}
+                <rect
+                  x="524"
+                  y="252"
+                  width="93"
+                  height="140"
+                  rx="10"
+                  fill="var(--bg)"
+                  data-astro-cid-j7pv25f6
+                ></rect>{" "}
+                <rect
+                  opacity="0.05"
+                  x="626"
+                  width="26"
+                  height="480"
+                  rx="10"
+                  fill="var(--text)"
+                  data-astro-cid-j7pv25f6
+                ></rect>{" "}
+                <rect
+                  x="173"
+                  width="242"
+                  height="60"
+                  rx="10"
+                  fill="var(--bg)"
+                  data-astro-cid-j7pv25f6
+                ></rect>{" "}
+                <rect
+                  x="1"
+                  y="68"
+                  width="70"
+                  height="157"
+                  rx="10"
+                  fill="var(--bg)"
+                  data-astro-cid-j7pv25f6
+                ></rect>{" "}
+                <rect
+                  opacity="0.05"
+                  x="1"
+                  y="234"
+                  width="70"
+                  height="259"
+                  rx="10"
+                  fill="var(--text)"
+                  data-astro-cid-j7pv25f6
+                ></rect>{" "}
+                <rect
+                  x="1"
+                  y="502"
+                  width="70"
+                  height="142"
+                  rx="10"
+                  fill="var(--secondary)"
+                  data-astro-cid-j7pv25f6
+                ></rect>{" "}
+              </svg>
+            </div>
           </div>
 
-          <div className="flex items-center justify-center bg-gray-50">
+          <hr />
+
+          <div className="flex items-center justify-center pt-8">
             <div className="container mx-auto p-8">
-              <h1 className="mb-8 text-center text-2xl font-bold">
-                <span className="border-b-2 border-[#1151A2]">
+              <h1 className="mb-10 text-center text-4xl font-bold">
+                <span className="border-b-8 border-[var(--secondary)]">
                   INFORMATIONS
                 </span>
               </h1>
@@ -149,14 +570,14 @@ async function Articles() {
 
 const Cards = () => (
   <>
-    <div className="max-w-sm rounded-lg border border-gray-200 bg-white p-6 shadow dark:border-gray-700 dark:bg-gray-800">
+    <div className="flex max-w-sm flex-col items-center justify-center rounded-2xl border border-gray-200 bg-[var(--cards)] p-6 shadow dark:border-gray-700 dark:bg-gray-800">
       <svg
         xmlns="http://www.w3.org/2000/svg"
         fill="none"
         viewBox="0 0 24 24"
         strokeWidth={1.5}
         stroke="currentColor"
-        className="mb-3 h-7 w-7 text-gray-500 dark:text-gray-400"
+        className="mb-3 h-10 w-10 text-[var(--accent)] dark:text-gray-400"
       >
         <path
           strokeLinecap="round"
@@ -165,7 +586,7 @@ const Cards = () => (
         />
       </svg>
 
-      <h5 className="mb-2 text-xl font-semibold tracking-tight text-gray-900 dark:text-white">
+      <h5 className="mb-2 border-b-4 border-[var(--secondary)] text-xl font-semibold tracking-tight text-gray-900 dark:text-white">
         For Readers
       </h5>
 
@@ -175,7 +596,7 @@ const Cards = () => (
       </p>
       <a
         href="#"
-        className="inline-flex items-center font-medium text-blue-600 hover:underline"
+        className="inline-flex items-start font-medium text-blue-600 hover:underline"
       >
         Learn More
         <svg
@@ -187,23 +608,23 @@ const Cards = () => (
         >
           <path
             stroke="currentColor"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            stroke-width="2"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth="2"
             d="M15 11v4.833A1.166 1.166 0 0 1 13.833 17H2.167A1.167 1.167 0 0 1 1 15.833V4.167A1.166 1.166 0 0 1 2.167 3h4.618m4.447-2H17v5.768M9.111 8.889l7.778-7.778"
           />
         </svg>
       </a>
     </div>
 
-    <div className="max-w-sm rounded-lg border border-gray-200 bg-white p-6 shadow dark:border-gray-700 dark:bg-gray-800">
+    <div className="flex max-w-sm flex-col items-center justify-center rounded-2xl border border-gray-200 bg-[var(--cards)] p-6 shadow dark:border-gray-700 dark:bg-gray-800">
       <svg
         xmlns="http://www.w3.org/2000/svg"
         fill="none"
         viewBox="0 0 24 24"
         strokeWidth={1.5}
         stroke="currentColor"
-        className="mb-3 h-7 w-7 text-gray-500 dark:text-gray-400"
+        className="mb-3 h-10 w-10 text-[var(--accent)] dark:text-gray-400"
       >
         <path
           strokeLinecap="round"
@@ -212,7 +633,7 @@ const Cards = () => (
         />
       </svg>
 
-      <h5 className="mb-2 text-xl font-semibold tracking-tight text-gray-900 dark:text-white">
+      <h5 className="mb-2 border-b-4 border-[var(--secondary)] text-xl font-semibold tracking-tight text-gray-900 dark:text-white">
         For Authors
       </h5>
 
@@ -234,23 +655,23 @@ const Cards = () => (
         >
           <path
             stroke="currentColor"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            stroke-width="2"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth="2"
             d="M15 11v4.833A1.166 1.166 0 0 1 13.833 17H2.167A1.167 1.167 0 0 1 1 15.833V4.167A1.166 1.166 0 0 1 2.167 3h4.618m4.447-2H17v5.768M9.111 8.889l7.778-7.778"
           />
         </svg>
       </a>
     </div>
 
-    <div className="max-w-sm rounded-lg border border-gray-200 bg-white p-6 shadow dark:border-gray-700 dark:bg-gray-800">
+    <div className="flex max-w-sm flex-col items-center justify-center rounded-2xl border border-gray-200 bg-[var(--cards)] p-6 shadow dark:border-gray-700 dark:bg-gray-800">
       <svg
         xmlns="http://www.w3.org/2000/svg"
         fill="none"
         viewBox="0 0 24 24"
         strokeWidth={1.5}
         stroke="currentColor"
-        className="mb-3 h-7 w-7 text-gray-500 dark:text-gray-400"
+        className="mb-3 h-10 w-10 text-[var(--accent)] dark:text-gray-400"
       >
         <path
           strokeLinecap="round"
@@ -259,7 +680,7 @@ const Cards = () => (
         />
       </svg>
 
-      <h5 className="mb-2 text-xl font-semibold tracking-tight text-gray-900 dark:text-white">
+      <h5 className="mb-2 border-b-4 border-[var(--secondary)] text-xl font-semibold tracking-tight text-gray-900 dark:text-white">
         For Librarians
       </h5>
 
@@ -281,9 +702,9 @@ const Cards = () => (
         >
           <path
             stroke="currentColor"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            stroke-width="2"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth="2"
             d="M15 11v4.833A1.166 1.166 0 0 1 13.833 17H2.167A1.167 1.167 0 0 1 1 15.833V4.167A1.166 1.166 0 0 1 2.167 3h4.618m4.447-2H17v5.768M9.111 8.889l7.778-7.778"
           />
         </svg>

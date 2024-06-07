@@ -3,23 +3,21 @@
 @tailwind utilities;
 
 :root {
-  /* white mode */
-
-  --PrimaryForWhite: #2f27ce;
-  --SecondaryForWhite: #dddbff;
-  --AccentForWhite: #443dff;
-
-  /* dark mode */
-
-  --primaryForDark: #3a31d8;
-  --SecondaryForDark: #020024;
-  --AccentForDark: #0600c2;
-
   --text: #0c0d10;
   --background: #f5f6fa;
   --primary: #4254c3;
   --secondary: #919eec;
   --accent: #455ef3;
+
+  --font-scale: 1.333;
+  --p: 1rem;
+  --h5: calc(var(--p) * var(--font-scale));
+  --h4: calc(var(--h5) * var(--font-scale));
+  --h3: calc(var(--h4) * var(--font-scale));
+  --h2: calc(var(--h3) * var(--font-scale));
+  --h1: calc(var(--h2) * var(--font-scale));
+
+  --cards: #ecedf7;
 }
 
 /* styles.css */

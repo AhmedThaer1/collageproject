@@ -31,7 +31,7 @@ export default function RootLayout({
               <div className="sticky top-0 w-full">
                 <TopNav />
               </div>
-              <main className="container mt-16 flex-grow md:mt-[6.6rem]">
+              <main className="mt-16 flex-grow md:mt-[6.6rem]">
                 {children}
                 <div>
                   <Footer />
