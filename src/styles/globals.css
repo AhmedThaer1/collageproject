@@ -14,6 +14,12 @@
   --primaryForDark: #3a31d8;
   --SecondaryForDark: #020024;
   --AccentForDark: #0600c2;
+
+  --text: #0c0d10;
+  --background: #f5f6fa;
+  --primary: #4254c3;
+  --secondary: #919eec;
+  --accent: #455ef3;
 }
 
 /* styles.css */

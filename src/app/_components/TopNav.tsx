@@ -47,13 +47,12 @@ const TopNav = () => {
                 </span>
               </SignInButton>
               <SignUpButton mode="modal">
-                <span className="cursor-pointer rounded-md px-3 py-2 text-lg font-semibold hover:bg-blue-700">
+                <span className="cursor-pointer rounded-md bg-white px-3 py-2 text-lg font-semibold text-black transition-all ease-in-out hover:bg-blue-700 hover:text-white">
                   Register
                 </span>
               </SignUpButton>
             </SignedOut>
             <SignedIn>
-              {/* here Goes the form sub */}
               <UserButton />
             </SignedIn>
             <ModeButton />
@@ -129,7 +128,11 @@ export function ModeButton() {
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
-        <Button variant="outline" size="icon">
+        <Button
+          variant="default"
+          size="icon"
+          className="bg-white text-black dark:bg-slate-900 dark:text-white"
+        >
           <Sun className="h-[1.2rem] w-[1.2rem] rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
           <Moon className="absolute h-[1.2rem] w-[1.2rem] rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
           <span className="sr-only">Toggle theme</span>
@@ -175,13 +178,13 @@ function Dropdown() {
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
             viewBox="0 0 24 24"
-            stroke-width="1.5"
+            strokeWidth="1.5"
             stroke="currentColor"
             className="h-6 w-6"
           >
             <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
+              strokeLinecap="round"
+              strokeLinejoin="round"
               d="M19.5 8.25l-7.5 7.5-7.5-7.5"
             />
           </svg>

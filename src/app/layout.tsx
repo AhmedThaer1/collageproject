@@ -4,6 +4,7 @@ import { GeistSans } from "geist/font/sans";
 import { ClerkProvider } from "@clerk/nextjs";
 import TopNav from "./_components/TopNav";
 import { ThemeProvider } from "./_components/theme-provider";
+import Footer from "./_components/Footer";
 
 export const metadata = {
   title: "Create T3 App",
@@ -32,6 +33,9 @@ export default function RootLayout({
               </div>
               <main className="container mt-16 flex-grow md:mt-[6.6rem]">
                 {children}
+                <div>
+                  <Footer />
+                </div>
               </main>
             </div>
           </ThemeProvider>
