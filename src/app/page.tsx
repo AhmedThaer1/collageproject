@@ -1,7 +1,9 @@
+import { SignedOut } from "@clerk/nextjs";
 import Image from "next/image";
 import Link from "next/link";
 import { Button } from "~/components/ui/button";
 import { getPost } from "~/server/queries";
+import FAQPage from "./_components/Faq";
 
 export const dynamic = "force-dynamic";
 
@@ -242,9 +244,11 @@ export default async function HomePage() {
                 <Button className="rounded-xl bg-[var(--primary)] px-8 py-2 text-lg text-white transition-all hover:-translate-y-1">
                   Go to Articles
                 </Button>
-                <Button className="rounded-xl bg-[var(--secondary)] px-8 py-2 text-lg text-white transition-all hover:-translate-y-1">
-                  Sign Up
-                </Button>
+                <SignedOut>
+                  <Button className="rounded-xl bg-[var(--secondary)] px-8 py-2 text-lg text-white transition-all hover:-translate-y-1">
+                    Sign Up
+                  </Button>
+                </SignedOut>
               </div>
             </div>
 
@@ -450,7 +454,7 @@ export default async function HomePage() {
 
           <div className="flex items-center justify-center pt-8">
             <div className="container mx-auto p-8">
-              <h1 className="mb-10 text-center text-4xl font-bold">
+              <h1 className="mb-10 text-center text-3xl font-bold md:text-4xl">
                 <span className="border-b-8 border-[var(--secondary)]">
                   INFORMATIONS
                 </span>
@@ -460,6 +464,12 @@ export default async function HomePage() {
               </div>
             </div>
           </div>
+
+          <hr />
+
+          <FAQPage />
+
+          <hr />
 
           <Articles />
         </main>
@@ -517,53 +527,55 @@ async function Articles() {
   const latestTenPosts = posts.slice(-10);
 
   return (
-    <div className="mt-8">
-      <h2 className="mb-4 text-2xl font-bold">ARTICLES</h2>
-      {latestTenPosts.map((post) => (
-        <div className="mb-8 border-b border-gray-400 pb-4" key={post.id}>
-          <div className="flex flex-col items-start justify-start gap-4 md:flex-row md:items-center">
-            <Image
-              src={"/PostImages/PostImages.jpg"}
-              alt="Post_image"
-              width={82}
-              height={82}
-              className="hidden md:block"
-            />
-            <Link href={`article/${post.id}`} className="text-sm font-semibold">
-              <h3 className="mb-2 text-sm font-semibold md:text-xl">
-                {post.title}
-              </h3>
-            </Link>
-          </div>
-          <div className="flex flex-col gap-2">
-            <Link
-              target="_blank"
-              href={post.doiUrl}
-              className="text-sm font-semibold text-gray-700 md:text-[16px]"
-            >
-              DOI:{" "}
-              <span className="text-[var(--primaryForDark)]">
-                {post.doiUrl}
-              </span>
-            </Link>
-            <p className="text-sm font-semibold text-gray-700 md:text-[16px]">
-              Author: {post.author}
-            </p>
-            <Link
-              href={post.postUrl}
-              className="text-md font-semibold text-gray-700"
-            >
-              <Button
-                variant={"default"}
-                size={"sm"}
-                className="rounded-lg bg-[#1151A2] px-6 text-white hover:bg-[var(--AccentForWhite)]"
+    <div className="pt-12">
+      <h2 className="mb-10 pb-12 text-center text-3xl font-bold md:text-4xl">
+        <span className="border-b-8 border-[var(--secondary)]">ARTICLES</span>
+      </h2>
+      <div className="h-full w-full md:p-14">
+        {latestTenPosts.map((post) => (
+          <div className="mb-8 border-b border-gray-400 pb-4" key={post.id}>
+            <div className="flex flex-col items-start justify-start gap-4 md:flex-row md:items-center">
+              <Image
+                src={"/PostImages/PostImages.jpg"}
+                alt="Post_image"
+                width={82}
+                height={82}
+                className="hidden md:block"
+              />
+              <Link href={`article/${post.id}`} className="w-full">
+                <h3 className="mb-2 break-words text-lg font-semibold md:text-xl">
+                  skldglksdhngljksdfnhfdslknhfl;dskhnfdlkjhnkdsnglkdsngdlskgnsklnfg
+                </h3>
+              </Link>
+            </div>
+            <div className="flex flex-col gap-2">
+              <Link
+                target="_blank"
+                href={post.doiUrl}
+                className="text-sm font-semibold text-gray-700 md:text-[16px]"
               >
-                PDF
-              </Button>
-            </Link>
+                <span className="font-bold">DOI:</span>{" "}
+                <span className="text-[var(--primary)]">{post.doiUrl}</span>
+              </Link>
+              <p className="text-sm font-semibold text-gray-700 md:text-[16px]">
+                <span className="font-bold">Author:</span> {post.author}
+              </p>
+              <Link
+                href={post.postUrl}
+                className="text-md font-semibold text-gray-700"
+              >
+                <Button
+                  variant={"default"}
+                  size={"sm"}
+                  className="rounded-lg bg-[var(--primary)] px-6 text-white hover:bg-[var(--accent)]"
+                >
+                  PDF
+                </Button>
+              </Link>
+            </div>
           </div>
-        </div>
-      ))}
+        ))}
+      </div>
     </div>
   );
 }

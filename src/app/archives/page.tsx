@@ -1,3 +1,9 @@
+import Faq from "../_components/Faq";
+
 export default function page() {
-  return <div>arch</div>;
+  return (
+    <div>
+      <Faq />
+    </div>
+  );
 }

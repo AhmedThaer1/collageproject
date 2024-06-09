@@ -37,17 +37,16 @@ const TopNav = () => {
         <div className="flex h-16 items-center justify-between">
           <div className="flex items-center gap-4">
             <h1 className="text-2xl font-bold">LOGO</h1>
-            <h1 className="text-2xl font-bold">ALKADHIM JOURNAL FOR CS</h1>
           </div>
           <div className="hidden space-x-4 md:flex md:items-center md:justify-center">
             <SignedOut>
               <SignInButton mode="modal">
-                <span className="cursor-pointer rounded-md px-3 py-2 text-lg font-semibold hover:bg-blue-700">
+                <span className="cursor-pointer rounded-[8px] px-3 py-2 text-lg font-semibold hover:bg-[var(--accent)]">
                   Sign In
                 </span>
               </SignInButton>
               <SignUpButton mode="modal">
-                <span className="cursor-pointer rounded-md bg-white px-3 py-2 text-lg font-semibold text-black transition-all ease-in-out hover:bg-blue-700 hover:text-white">
+                <span className="cursor-pointer rounded-[8px] bg-white px-2 py-2 text-lg font-semibold text-black transition-all ease-in-out hover:bg-[var(--accent)] hover:text-white">
                   Register
                 </span>
               </SignUpButton>
@@ -55,7 +54,7 @@ const TopNav = () => {
             <SignedIn>
               <UserButton />
             </SignedIn>
-            <ModeButton />
+            {/* <ModeButton /> */}
           </div>
           <div className="flex md:hidden">
             <button
@@ -102,7 +101,7 @@ const TopNav = () => {
         </div>
       )}
 
-      <div className="mx-auto bg-[#1151A2] text-white shadow-md md:px-4 lg:px-4 xl:px-60">
+      <div className="mx-auto flex justify-between bg-[#1151A2] text-white shadow-md md:px-4 lg:px-4 xl:px-60">
         <div className="hidden space-x-4 md:flex">
           {NavLinks.map((link) => (
             <Link
@@ -115,6 +114,7 @@ const TopNav = () => {
           ))}
           <Dropdown />
         </div>
+        {/* <ModeButton /> */}
       </div>
     </nav>
   );
@@ -130,8 +130,8 @@ export function ModeButton() {
       <DropdownMenuTrigger asChild>
         <Button
           variant="default"
-          size="icon"
-          className="bg-white text-black dark:bg-slate-900 dark:text-white"
+          size="sm"
+          className="rounded-full bg-white text-black dark:bg-slate-900 dark:text-white"
         >
           <Sun className="h-[1.2rem] w-[1.2rem] rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
           <Moon className="absolute h-[1.2rem] w-[1.2rem] rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
@@ -170,9 +170,9 @@ export function ModeButton() {
 
 function Dropdown() {
   return (
-    <div className="group relative flex cursor-pointer rounded-md px-3 py-2 hover:bg-[var(--PrimaryForWhite)] dark:hover:bg-[var(--AccentForDark)] md:items-center md:justify-center">
+    <div className="group relative flex cursor-pointer rounded-md px-3 py-2 hover:bg-blue-600 md:items-center md:justify-center">
       <div className="flex items-center justify-between">
-        <a className="menu-hover pr-2 text-white">About</a>
+        <a className="menu-hover text-sm hover:bg-blue-600">About</a>
         <span>
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -180,7 +180,7 @@ function Dropdown() {
             viewBox="0 0 24 24"
             strokeWidth="1.5"
             stroke="currentColor"
-            className="h-6 w-6"
+            className="h-4 w-4 md:h-6 md:w-6"
           >
             <path
               strokeLinecap="round"
