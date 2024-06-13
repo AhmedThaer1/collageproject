@@ -1,6 +1,6 @@
-- [ ] create the home, archives, Contact, about
-- [ ] fix the design along side the side bar
-- [ ] make a database that accepts pdf files
-- [ ] auth/clerk
-- [ ]
+- [x] create the home, archives, Contact, about
+- [x] filling the home page
+- [x] make a database that accepts pdf files
+- [x] auth/clerk
+- [ ] implement the Bread for the navigation
 - [ ]

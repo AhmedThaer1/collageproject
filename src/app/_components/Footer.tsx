@@ -95,16 +95,10 @@ export default function Footer() {
         <p className="text-sm">
           © Al-Kadhim Journal for Computer Science. All Rights Reserved 2024.
         </p>
-        <div className="flex space-x-4">
-          <a href="#twitter" className="text-gray-400 hover:text-white">
-            TWITTER
-          </a>
-          <a href="#facebook" className="text-gray-400 hover:text-white">
-            FACEBOOK
-          </a>
-          <a href="#instagram" className="text-gray-400 hover:text-white">
-            INSTAGRAM
-          </a>
+        <div className="flex space-x-4 pt-4 md:pt-0">
+          <p className="text-sm">
+            ISSN: 3007-1437 (Online), ISSN: 3007-1429 (Print)
+          </p>
         </div>
       </div>
     </footer>

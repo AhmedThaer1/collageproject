@@ -4,6 +4,7 @@ import Link from "next/link";
 import { Button } from "~/components/ui/button";
 import { getPost } from "~/server/queries";
 import FAQPage from "./_components/Faq";
+import Aside from "./_components/Aside";
 
 export const dynamic = "force-dynamic";
 
@@ -241,11 +242,11 @@ export default async function HomePage() {
               </p>
 
               <div className="flex w-fit items-center justify-center gap-4 pb-8 pt-12 md:flex-row">
-                <Button className="rounded-xl bg-[var(--primary)] px-8 py-2 text-lg text-white transition-all hover:-translate-y-1">
+                <Button className="rounded-xl bg-[linear-gradient(120deg,var(--primary),var(--accent))] px-8 py-2 text-lg text-white transition-all hover:-translate-y-1">
                   Go to Articles
                 </Button>
                 <SignedOut>
-                  <Button className="rounded-xl bg-[var(--secondary)] px-8 py-2 text-lg text-white transition-all hover:-translate-y-1">
+                  <Button className="rounded-xl bg-[var(--primary)] px-8 py-2 text-lg text-white transition-all hover:-translate-y-1">
                     Sign Up
                   </Button>
                 </SignedOut>
@@ -474,49 +475,7 @@ export default async function HomePage() {
           <Articles />
         </main>
 
-        <aside className="w-full bg-gray-200 p-4 lg:w-1/4">
-          <div className="flex items-center justify-center pb-8">
-            <Button className="rounded-lg bg-[#1151A2] p-2 text-white hover:bg-[var(--primaryForDark)]">
-              Make a submission
-            </Button>
-          </div>
-          <div className="pb-8">
-            <h1 className="text-xl font-bold">Templates</h1>
-          </div>
-          <div className="top-4">
-            <h2 className="pb-4 text-xl font-bold ">JOURNAL INFORMATION</h2>
-            <div className="flex flex-col justify-start gap-2">
-              <p className="border-b border-gray-400 pb-3">
-                <span className="font-semibold text-black">Journal:</span>{" "}
-                AL-KADHIM JOURNAL of Science
-              </p>
-              <p className="border-b border-gray-400 pb-3">
-                <span className="font-semibold text-black">Publisher:</span>{" "}
-                Imam Al-Kadhum College (IKC)
-              </p>
-              <p className="border-b border-gray-400 pb-3">
-                <span className="font-semibold text-black">ISSN:</span>{" "}
-                3007-1429 (P) - 3007-1437 (O)
-              </p>
-              <p className="border-b border-gray-400 pb-3">
-                <span className="font-semibold text-black">Discipline:</span>{" "}
-                Science (Multidisciplinary)
-              </p>
-              {/* edit here <p className="pb-3 border-b border-gray-400">DOI: https://doi.org/10.61710/kjcs.v2i1</p> */}
-              <p className="border-b border-gray-400 pb-3">
-                <span className="font-semibold text-black">Media:</span> Printed
-                & Online
-              </p>
-              <p className="border-b border-gray-400 pb-3">
-                <span className="font-semibold text-black">Language:</span>{" "}
-                English
-              </p>
-              <p className="border-b border-gray-400 pb-3">
-                <span className="font-semibold text-black">Country:</span> IRAQ
-              </p>
-            </div>
-          </div>
-        </aside>
+        <Aside />
       </div>
     </div>
   );
@@ -575,6 +534,11 @@ async function Articles() {
             </div>
           </div>
         ))}
+        <div className="flex items-center justify-center">
+          <h1 className="cursor-pointer rounded-[4px] bg-[var(--primary)] px-3 py-2 text-xl font-semibold text-white transition-all ease-in-out hover:scale-110 hover:shadow-xl">
+            See More
+          </h1>
+        </div>
       </div>
     </div>
   );

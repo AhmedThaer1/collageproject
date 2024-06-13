@@ -22,7 +22,8 @@ import { Moon, Sun } from "lucide-react";
 import { Button } from "~/components/ui/button";
 
 const NavLinks = [
-  { title: "Current", url: "/" },
+  { title: "Home", url: "/" },
+  { title: "Current", url: "/current" },
   { title: "Archives", url: "/archives" },
   { title: "Announcements", url: "/announcements" },
   { title: "Contact", url: "/contact" },
@@ -54,7 +55,6 @@ const TopNav = () => {
             <SignedIn>
               <UserButton />
             </SignedIn>
-            {/* <ModeButton /> */}
           </div>
           <div className="flex md:hidden">
             <button
@@ -107,7 +107,7 @@ const TopNav = () => {
             <Link
               href={link.url}
               key={link.url}
-              className="rounded-md px-3 py-2 hover:bg-[var(--PrimaryForWhite)] dark:hover:bg-[var(--AccentForDark)]"
+              className="rounded-md px-3 py-2 hover:bg-blue-600"
             >
               {link.title}
             </Link>
@@ -180,7 +180,7 @@ function Dropdown() {
             viewBox="0 0 24 24"
             strokeWidth="1.5"
             stroke="currentColor"
-            className="h-4 w-4 md:h-6 md:w-6"
+            className="h-4 w-4 md:h-5 md:w-5"
           >
             <path
               strokeLinecap="round"
@@ -192,17 +192,25 @@ function Dropdown() {
       </div>
 
       <div className="invisible absolute top-10 z-50 flex w-[250px] flex-col items-center justify-center bg-gray-100 px-4 py-1 text-gray-800 shadow-xl group-hover:visible">
-        <a className="my-2 block border-b border-gray-100 py-1 font-semibold text-gray-500 hover:text-black md:mx-2">
+        <Link
+          href={"/AboutTheJournal"}
+          className="my-2 block border-b border-gray-100 py-1 font-semibold text-gray-500 hover:text-black md:mx-2"
+        >
           ABOUT THE JOURNAL
-        </a>
-
-        <a className="my-2 block border-b border-gray-100 py-1 font-semibold text-gray-500 hover:text-black md:mx-2">
-          AUTHOR GUIDES
-        </a>
-
-        <a className="my-2 block border-b border-gray-100 py-1 font-semibold text-gray-500 hover:text-black md:mx-2">
+        </Link>
+        <Link
+          href={"/EditorialTeam"}
+          className="my-2 block border-b border-gray-100 py-1 font-semibold text-gray-500 hover:text-black md:mx-2"
+        >
           EDITORIAL TEAM
-        </a>
+        </Link>
+
+        <Link
+          href={"/AuthorGuideLines"}
+          className="my-2 block border-b border-gray-100 py-1 font-semibold text-gray-500 hover:text-black md:mx-2"
+        >
+          AUTHOR GUIDELINES
+        </Link>
 
         <a className="my-2 block border-b border-gray-100 py-1 font-semibold text-gray-500 hover:text-black md:mx-2">
           PRIVACY STATEMENT
@@ -210,6 +218,18 @@ function Dropdown() {
 
         <a className="my-2 block border-b border-gray-100 py-1 font-semibold text-gray-500 hover:text-black md:mx-2">
           PUBLISHER WEBSITE
+        </a>
+
+        <a className="my-2 block border-b border-gray-100 py-1 font-semibold text-gray-500 hover:text-black md:mx-2">
+          REVIEW GUIDELINES
+        </a>
+
+        <a className="my-2 block border-b border-gray-100 py-1 font-semibold text-gray-500 hover:text-black md:mx-2">
+          JOURNAL&lsquo;S LICENSE
+        </a>
+
+        <a className="my-2 block border-b border-gray-100 py-1 font-semibold text-gray-500 hover:text-black md:mx-2">
+          PUBLICATION ETHICS
         </a>
       </div>
     </div>
